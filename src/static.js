@@ -16,6 +16,7 @@ let middleware = (req, res, next)=>{
 			}
 		});
 	}else if(templates.hasOwnProperty(requestPath)){
+		log.info('Pretty template to be served ', requestPath, ' -> ', templates[requestPath]);
 		res.render(templates[requestPath]);
 	}else{
 		next();
