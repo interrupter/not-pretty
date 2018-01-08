@@ -4,9 +4,10 @@ const config = require('not-config').readerForModule('pretty'),
 
 let middleware = (req, res, next)=>{
 	const list = config.get('list'),
-		root = config.get('root');
-	if (list.hasOwnProperty(decodeURI(req.path))){
-		serveStatic(path.join(root, list[req.path]))(req, res, next);
+		root = config.get('root'),
+		requestPath = decodeURI(req.path);
+	if (list.hasOwnProperty(requestPath)){
+		serveStatic(root)(req, res, next);
 	}else{
 		next();
 	}
