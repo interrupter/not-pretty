@@ -1,0 +1,14 @@
+{
+	"modules":{
+		"pretty":{
+			"filesDir": "files",
+			"templatesDir": "views",
+			"files": {
+				"/Главная": "/index.html"
+			},
+			"templates": {
+				"/неГлавная": "index.pug"
+			}
+		}
+	}
+}
